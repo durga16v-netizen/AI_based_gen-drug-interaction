@@ -1,0 +1,547 @@
+{
+  "model_name": "GeneRx Calibrated Random Forest Classifier",
+  "version": "1.0.0",
+  "trained_date": "2026-10-31",
+  "algorithm": "RandomForestClassifier(n_estimators=100, max_depth=10) with CalibratedClassifierCV(method='sigmoid')",
+  "feature_count": 18,
+  "feature_names": [
+    "drug_mw",
+    "drug_logp",
+    "drug_hbd",
+    "drug_hba",
+    "drug_tpsa",
+    "drug_rbc",
+    "drug_rings",
+    "gene_chr",
+    "gene_log_len",
+    "gene_protein_mw",
+    "gene_superfamily",
+    "gene_go_count",
+    "gene_degree",
+    "gene_is_cancer",
+    "mw_ratio",
+    "hb_density",
+    "lipophilic_eff",
+    "target_class_match"
+  ],
+  "train_samples": 2320,
+  "test_samples": 580,
+  "cv_roc_auc_mean": 0.995,
+  "cv_roc_auc_std": 0.0018,
+  "metrics": {
+    "accuracy": 0.9759,
+    "precision": 0.9859,
+    "recall_sensitivity": 0.9655,
+    "specificity": 0.9862,
+    "f1_score": 0.9756,
+    "roc_auc": 0.9954,
+    "pr_auc": 0.9963,
+    "brier_score": 0.0189
+  },
+  "confusion_matrix": {
+    "true_positive": 280,
+    "false_positive": 4,
+    "true_negative": 286,
+    "false_negative": 10
+  },
+  "roc_curve": [
+    {
+      "fpr": 0.0,
+      "tpr": 0.0
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.0034
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.0207
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.0276
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.1207
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.1276
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.231
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.2379
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.2517
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.2586
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.3552
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.369
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.3828
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.3897
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.4
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.4069
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.4862
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.4931
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.7724
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.7793
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.8724
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.8862
+    },
+    {
+      "fpr": 0.0,
+      "tpr": 0.9586
+    },
+    {
+      "fpr": 0.0069,
+      "tpr": 0.9586
+    },
+    {
+      "fpr": 0.0069,
+      "tpr": 0.9655
+    },
+    {
+      "fpr": 0.0207,
+      "tpr": 0.9655
+    },
+    {
+      "fpr": 0.0207,
+      "tpr": 0.9724
+    },
+    {
+      "fpr": 0.0517,
+      "tpr": 0.9724
+    },
+    {
+      "fpr": 0.0517,
+      "tpr": 0.9759
+    },
+    {
+      "fpr": 0.0552,
+      "tpr": 0.9759
+    },
+    {
+      "fpr": 0.0552,
+      "tpr": 0.9793
+    },
+    {
+      "fpr": 0.0655,
+      "tpr": 0.9793
+    },
+    {
+      "fpr": 0.0655,
+      "tpr": 0.9862
+    },
+    {
+      "fpr": 0.0828,
+      "tpr": 0.9862
+    },
+    {
+      "fpr": 0.0828,
+      "tpr": 0.9897
+    },
+    {
+      "fpr": 0.2414,
+      "tpr": 0.9897
+    },
+    {
+      "fpr": 0.2414,
+      "tpr": 0.9931
+    },
+    {
+      "fpr": 0.2862,
+      "tpr": 0.9931
+    },
+    {
+      "fpr": 0.2862,
+      "tpr": 0.9966
+    },
+    {
+      "fpr": 0.4207,
+      "tpr": 0.9966
+    },
+    {
+      "fpr": 0.4207,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.6069,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.6138,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.8448,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.8517,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.9103,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.9172,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.9517,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.9586,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.9655,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.9793,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 0.9897,
+      "tpr": 1.0
+    },
+    {
+      "fpr": 1.0,
+      "tpr": 1.0
+    }
+  ],
+  "pr_curve": [
+    {
+      "recall": 1.0,
+      "precision": 0.5
+    },
+    {
+      "recall": 1.0,
+      "precision": 0.5151
+    },
+    {
+      "recall": 1.0,
+      "precision": 0.5263
+    },
+    {
+      "recall": 1.0,
+      "precision": 0.537
+    },
+    {
+      "recall": 1.0,
+      "precision": 0.5492
+    },
+    {
+      "recall": 1.0,
+      "precision": 0.5609
+    },
+    {
+      "recall": 1.0,
+      "precision": 0.5731
+    },
+    {
+      "recall": 1.0,
+      "precision": 0.5859
+    },
+    {
+      "recall": 1.0,
+      "precision": 0.5992
+    },
+    {
+      "recall": 1.0,
+      "precision": 0.6131
+    },
+    {
+      "recall": 1.0,
+      "precision": 0.6291
+    },
+    {
+      "recall": 1.0,
+      "precision": 0.6444
+    },
+    {
+      "recall": 1.0,
+      "precision": 0.6606
+    },
+    {
+      "recall": 1.0,
+      "precision": 0.6776
+    },
+    {
+      "recall": 1.0,
+      "precision": 0.6954
+    },
+    {
+      "recall": 0.9966,
+      "precision": 0.7118
+    },
+    {
+      "recall": 0.9966,
+      "precision": 0.7316
+    },
+    {
+      "recall": 0.9966,
+      "precision": 0.7526
+    },
+    {
+      "recall": 0.9966,
+      "precision": 0.7748
+    },
+    {
+      "recall": 0.9931,
+      "precision": 0.7956
+    },
+    {
+      "recall": 0.9897,
+      "precision": 0.8177
+    },
+    {
+      "recall": 0.9897,
+      "precision": 0.8441
+    },
+    {
+      "recall": 0.9897,
+      "precision": 0.8723
+    },
+    {
+      "recall": 0.9897,
+      "precision": 0.9025
+    },
+    {
+      "recall": 0.9862,
+      "precision": 0.9316
+    },
+    {
+      "recall": 0.9724,
+      "precision": 0.9527
+    },
+    {
+      "recall": 0.9655,
+      "precision": 0.9825
+    },
+    {
+      "recall": 0.9448,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.9069,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.8621,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.8241,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.7862,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.7448,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.7069,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.669,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.631,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.5931,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.5552,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.5172,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.4759,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.4379,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.3966,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.3483,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.3103,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.2724,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.2276,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.1897,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.1517,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.1103,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.0724,
+      "precision": 1.0
+    },
+    {
+      "recall": 0.0345,
+      "precision": 1.0
+    }
+  ],
+  "feature_importances": [
+    {
+      "feature": "mw_ratio",
+      "importance": 0.163
+    },
+    {
+      "feature": "drug_mw",
+      "importance": 0.0983
+    },
+    {
+      "feature": "lipophilic_eff",
+      "importance": 0.071
+    },
+    {
+      "feature": "drug_logp",
+      "importance": 0.0691
+    },
+    {
+      "feature": "hb_density",
+      "importance": 0.0675
+    },
+    {
+      "feature": "gene_go_count",
+      "importance": 0.064
+    },
+    {
+      "feature": "gene_protein_mw",
+      "importance": 0.0638
+    },
+    {
+      "feature": "gene_degree",
+      "importance": 0.0602
+    },
+    {
+      "feature": "drug_tpsa",
+      "importance": 0.0505
+    },
+    {
+      "feature": "drug_rbc",
+      "importance": 0.0499
+    },
+    {
+      "feature": "drug_hba",
+      "importance": 0.046
+    },
+    {
+      "feature": "gene_chr",
+      "importance": 0.0427
+    },
+    {
+      "feature": "gene_log_len",
+      "importance": 0.0387
+    },
+    {
+      "feature": "gene_superfamily",
+      "importance": 0.0325
+    },
+    {
+      "feature": "drug_rings",
+      "importance": 0.0305
+    },
+    {
+      "feature": "drug_hbd",
+      "importance": 0.0261
+    },
+    {
+      "feature": "gene_is_cancer",
+      "importance": 0.0154
+    },
+    {
+      "feature": "target_class_match",
+      "importance": 0.0106
+    }
+  ],
+  "limitations": [
+    "Trained on small-molecule and selected macromolecular drug interactions; highly novel scaffolds with unusual macrocycles may yield lower confidence.",
+    "Predictions reflect physical-chemical and target family compatibility, and do not model in vivo pharmacokinetics or blood-brain barrier permeability.",
+    "Outputs are probabilistic candidate scores intended solely for hypothesis generation and must be validated through experimental assays.",
+    "Never use computational interaction scores as clinical prescribing guidance."
+  ]
+}
