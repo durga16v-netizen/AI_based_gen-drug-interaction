@@ -5,7 +5,7 @@ FastAPI REST API Server
 
 import os
 from typing import Optional, List
-from fastapi import FastAPI, Query, HTTPException
+from fastapi import FastAPI, Query, HTTPException, Header
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
@@ -41,6 +41,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+frontend_dist_path = os.getenv(
+    "FRONTEND_DIST_PATH",
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "frontend", "dist"))
+)
+
 ACADEMIC_DISCLAIMER = (
     "GeneRx is an academic research and candidate-discovery tool intended for scientific investigation, "
     "hypothesis generation, and bioinformatics exploration. Interaction scores and AI predictions do not "
@@ -49,7 +54,11 @@ ACADEMIC_DISCLAIMER = (
 )
 
 @app.get("/")
-def root():
+def root(accept: Optional[str] = Header(None)):
+    if os.path.exists(frontend_dist_path) and accept and "text/html" in accept:
+        index_file = os.path.join(frontend_dist_path, "index.html")
+        if os.path.exists(index_file):
+            return FileResponse(index_file)
     return {
         "system": "GeneRx AI-Based Drug-Gene Interaction Analysis System",
         "status": "online",
@@ -388,12 +397,16 @@ async def get_network(
     graph = build_network_graph(entity, type.lower(), interactions)
     return NetworkGraphResponse(**graph)
 
+@app.get("/api/molecule")
+@app.get("/api/molecule/")
 @app.get("/api/molecule/{identifier}")
-async def get_molecule_structure(identifier: str):
+async def get_molecule_structure(identifier: str = "Aspirin"):
     """
     Returns 3D/2D conformer SDF data and PubChem chemical properties.
     """
-    clean_id = identifier.strip()
+    clean_id = (identifier or "Aspirin").strip()
+    if not clean_id:
+        clean_id = "Aspirin"
     cid = None
     if clean_id.isdigit():
         cid = int(clean_id)
@@ -505,10 +518,6 @@ async def get_research_updates():
     ]
 
 # Mount frontend production build if available
-frontend_dist_path = os.getenv(
-    "FRONTEND_DIST_PATH",
-    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "frontend", "dist"))
-)
 if os.path.exists(frontend_dist_path):
     app.mount("/assets", StaticFiles(directory=os.path.join(frontend_dist_path, "assets")), name="assets")
 
