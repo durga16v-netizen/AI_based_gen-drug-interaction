@@ -3,7 +3,17 @@
  * Interfaces with FastAPI backend with structured error handling.
  */
 
-const BASE_URL = '/api';
+const getBaseUrl = () => {
+  if (import.meta.env.VITE_API_BASE_URL) {
+    return import.meta.env.VITE_API_BASE_URL;
+  }
+  if (typeof window !== 'undefined' && window.location.hostname.includes('vercel.app')) {
+    return 'https://ai-based-gen-drug-interaction.onrender.com/api';
+  }
+  return '/api';
+};
+
+const BASE_URL = getBaseUrl();
 
 export async function fetchStats() {
   try {

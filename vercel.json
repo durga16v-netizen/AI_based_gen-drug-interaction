@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:match*",
+      "destination": "https://ai-based-gen-drug-interaction.onrender.com/api/:match*"
+    }
+  ]
+}
