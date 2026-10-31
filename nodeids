@@ -1,0 +1,17 @@
+[
+  "backend/tests/test_api.py::test_ai_predict_candidate",
+  "backend/tests/test_api.py::test_drug_comparison",
+  "backend/tests/test_api.py::test_drug_search_empty",
+  "backend/tests/test_api.py::test_drug_search_valid",
+  "backend/tests/test_api.py::test_gene_search_empty",
+  "backend/tests/test_api.py::test_gene_search_valid",
+  "backend/tests/test_api.py::test_health",
+  "backend/tests/test_api.py::test_ml_metrics",
+  "backend/tests/test_api.py::test_molecule_structure",
+  "backend/tests/test_api.py::test_network_graph",
+  "backend/tests/test_api.py::test_root",
+  "backend/tests/test_api.py::test_stats",
+  "backend/tests/test_ml.py::test_feature_extraction",
+  "backend/tests/test_ml.py::test_ml_prediction_bounds",
+  "backend/tests/test_ml.py::test_model_metadata_loaded"
+]
